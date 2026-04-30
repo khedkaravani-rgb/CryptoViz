@@ -1,4 +1,3 @@
-Initialize Next.js project with TypeScript, Tailwind, App Router, ESLint
 Configure next.config.ts with output export and trailingSlash true
 Setup pnpm workspace configuration
 Add Node version config (.nvmrc or .node-version)
