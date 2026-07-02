@@ -98,24 +98,30 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 font-sans transition-colors duration-300">
       <Navbar />
 
-      {/* Hero Section */}
+     
       <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
         <div className="absolute top-0 left-1/2 -z-10 h-[600px] w-[1000px] -translate-x-1/2 stroke-zinc-200 [mask-image:radial-gradient(100%_100%_at_top,white,transparent)] dark:stroke-zinc-800">
           <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-indigo-500/10 blur-3xl" />
         </div>
 
         <div className="mx-auto max-w-5xl text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-5xl lg:text-6xl flex flex-col items-center sm:block">
-            Interact with Cryptography,{" "}
-            <br className="sm:hidden" />
-            <Typewriter 
-              words={[
-                "Visualised in Real-Time.",
-                "Made Simple.",
-                "Explore the World of Cryptography."
-              ]}
-            />
-          </h1>
+  <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white sm:text-5xl lg:text-6xl">
+    
+    <span className="block mb-2">Interact with Cryptography,</span>
+    
+    
+    <span className="block text-teal-600 dark:text-teal-400 min-h-[1.2em] sm:min-h-[1.5em]">
+      <Typewriter 
+        words={[
+          "Visualised in Real-Time.",
+          "Made Simple.",
+          "Explore the World of Cryptography."
+        ]}
+      />
+    </span>
+  </h1>
+  
+  
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             Looking for a starting point or more instructions? Head over to{" "}
             <a
