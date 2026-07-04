@@ -41,12 +41,12 @@ interface WorkerResponse {
   error?: string
 }
 
-const workerScope = type WorkerRequestMessage = WorkerRequest | Uint8Array;
+type WorkerRequestMessage = WorkerRequest | Uint8Array
 
-self as unknown as Worker
+const workerScope = self as unknown as Worker
 
 workerScope.addEventListener('message', (event: MessageEvent<WorkerRequestMessage>) => {
-  let requestData = event.data
+  let requestData: WorkerRequestMessage = event.data
   if (requestData instanceof Uint8Array) {
     const decoder = new TextDecoder()
     requestData = JSON.parse(decoder.decode(requestData))
@@ -163,14 +163,11 @@ workerScope.addEventListener('message', (event: MessageEvent<WorkerRequestMessag
       success: true,
       result,
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
     workerScope.postMessage({
       id,
       success: false,
       error: error instanceof Error ? error.message : String(error),
     })
-    const encoder = new TextEncoder()
-    const errorBuffer = encoder.encode(errorPayload)
-    self.postMessage(errorBuffer, [errorBuffer.buffer])
   }
 })
